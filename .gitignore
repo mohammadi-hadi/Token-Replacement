@@ -1,9 +1,23 @@
-# AI assistant files - never push
+# Claude/AI assistant files
 CLAUDE.md
 .claude/
 .claude*
 .cursorrules
 .cursor/
+
+# Large data archives
+*.zip
+storage_1_tb_new/
+
+# Development/test files
+mock_responses.csv
+generate_mock_responses.py
+human_eval_latex_table.tex
+human_eval_analysis.py
+
+# Jupyter notebooks
+*.ipynb
+.ipynb_checkpoints/
 
 # LaTeX build artifacts
 *.aux
@@ -23,15 +37,13 @@ CLAUDE.md
 *.bcf
 *.run.xml
 *-blx.bib
+comment.cut
 
 # LaTeX editor files
 *.bak
 *~
 \#*\#
 .\#*
-
-# PDF output (uncomment if you want to track PDFs)
-# *.pdf
 
 # OS files
 .DS_Store
@@ -41,9 +53,23 @@ Thumbs.db
 ehthumbs.db
 Desktop.ini
 
-# Archives
-*.zip
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+.env
+.venv
+venv/
+ENV/
 
-# Temporary files
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Temporary
 *.tmp
 *.temp
