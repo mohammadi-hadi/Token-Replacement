@@ -1,0 +1,49 @@
+# AI assistant files - never push
+CLAUDE.md
+.claude/
+.claude*
+.cursorrules
+.cursor/
+
+# LaTeX build artifacts
+*.aux
+*.bbl
+*.blg
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.synctex.gz
+*.toc
+*.lof
+*.lot
+*.nav
+*.snm
+*.vrb
+*.bcf
+*.run.xml
+*-blx.bib
+
+# LaTeX editor files
+*.bak
+*~
+\#*\#
+.\#*
+
+# PDF output (uncomment if you want to track PDFs)
+# *.pdf
+
+# OS files
+.DS_Store
+.DS_Store?
+._*
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Archives
+*.zip
+
+# Temporary files
+*.tmp
+*.temp
