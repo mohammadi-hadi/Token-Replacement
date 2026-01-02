@@ -320,8 +320,6 @@ Table~\ref{tab:combined_data_overview} summarizes the essential attributes of th
 \label{sec:methodology}
 We used an approach that integrates several models for text classification to address the AIGT detection task. First, we converted all text to lowercase to handle tokens in a consistent way. We then removed non-informative elements such as URLs, punctuation, and special characters, since these tokens often do not carry semantic meaning. After this cleaning, we split the text into tokens and applied lemmatization to map words to their base forms, which lowered data complexity and improved the model’s ability to recognize patterns.
 
-\paragraph{\textbf{Baselines Models.}} We built an XGBoost classifier by first transforming the text into numerical features with a TF-IDF vectorizer set to a maximum of 5000 features. The XGBoost model was configured with use\_label\_encoder=False and eval\_metric='logloss'. Training used the TF-IDF representations from the training set, and final predictions on the test set were evaluated using precision, recall, F1, and accuracy. Also, We fine-tuned BERT-base (bert-base-uncased), DistilBERT (distilbert-base-uncased), and  XLM-RoBERTa (xlm-roberta-base). The best checkpoint was chosen based on the highest F1 score on a validation subset. We then evaluated the final models on the test data. 
-
 
 
 \begin{wrapfigure}{r}{0.48\textwidth}
@@ -382,6 +380,8 @@ We used an approach that integrates several models for text classification to ad
   \end{minipage}
 \end{wrapfigure}
 
+
+\paragraph{\textbf{Baselines Models.}} We built an XGBoost classifier by first transforming the text into numerical features with a TF-IDF vectorizer set to a maximum of 5000 features. The XGBoost model was configured with use\_label\_encoder=False and eval\_metric='logloss'. Training used the TF-IDF representations from the training set, and final predictions on the test set were evaluated using precision, recall, F1, and accuracy. Also, We fine-tuned BERT-base (bert-base-uncased), DistilBERT (distilbert-base-uncased), and  XLM-RoBERTa (xlm-roberta-base). The best checkpoint was chosen based on the highest F1 score on a validation subset. We then evaluated the final models on the test data. 
 
 
 
