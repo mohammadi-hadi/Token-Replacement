@@ -1338,7 +1338,7 @@ In general, GPT-based replacements make text more natural or domain-specific, wh
 \subsection{Analysis of Ensemble Components}
 \label{subsec:ablation}
 
-To understand the contribution of individual components to our ensemble's performance, we analyze the results from Table~\ref{tab:lang_domain_updated}, which shows each single model's performance alongside the Ensemble. This analysis serves as a proxy for ablation, revealing how much each component contributes to the combined system.
+To understand the contribution of individual components to our ensemble's performance, we analyze the results from Table~\ref{tab:lang_domain_updated}, which shows each single model's performance alongside the Ensemble. This analysis serves as a proxy for a leave one component out analysis, revealing how much each component contributes to the combined system.
 
 \paragraph{Ensemble vs. Single Models.}
 Across all language-domain combinations, the Ensemble consistently outperforms or matches the best single model. In English, the Ensemble achieves an average F1 of 0.86 compared to 0.78 for BERT-base, 0.84 for DistilBERT, and 0.77 for XLM-RoBERTa. In Dutch, the performance gap is even more pronounced: the Ensemble averages 0.78 F1 while BERT-base achieves only 0.55, DistilBERT 0.65, and XLM-RoBERTa 0.63. This demonstrates that the ensemble architecture provides substantial gains, particularly for challenging cross-lingual scenarios.
@@ -1350,7 +1350,7 @@ Our ensemble benefits from the complementary capabilities of its constituent mod
 Table~\ref{tab:all_models_rewriting_f1acc} reveals that the Ensemble exhibits smaller performance drops under token replacement attacks compared to single models. While XGBoost shows drops of up to 56\% F1 under LIME+HSR, the Ensemble's maximum drop is 19\%, demonstrating enhanced robustness. This resilience stems from the ensemble's redundant detection pathways---when one component is fooled by specific token manipulations, others may still correctly identify the AI-generated nature of the text.
 
 \paragraph{Limitations.}
-A complete leave-one-out ablation study would require retraining the ensemble with each component removed, which was beyond the scope of our current experimental setup. Future work could systematically evaluate the marginal contribution of each model by training multiple ensemble variants. Nevertheless, the single-model results provide strong evidence that the ensemble architecture meaningfully combines component strengths rather than merely averaging their predictions.
+A complete leave one component out analysis would require retraining the ensemble with each component removed, which was beyond the scope of our current experimental setup. Future work could systematically evaluate the marginal contribution of each model by training multiple ensemble variants. Nevertheless, the single-model results provide strong evidence that the ensemble architecture meaningfully combines component strengths rather than merely averaging their predictions.
 
 \subsection{Sensitivity Analysis}
 \label{subsec:sensitivity}
