@@ -282,9 +282,6 @@ Recent use of AI chatbots for mental health support shows that people often thin
 \label{sec:dataset}
 In this section, we detail the CLIN33 dataset~\cite{fivez2024clin33} used as our primary corpus and describe how it was augmented to expand its linguistic variability. We also present the portion of the AuTexTification dataset\footnote{\url{https://zenodo.org/records/10732813}} used to strengthen our ensemble models. The CLIN33 shared task corpus comprises human-written and AIGTs in English and Dutch, including three domains: news, tweets, and reviews. Each domain contains 200 samples from human authors and 200 samples from LLMs (GPT-4 and Vicu\~{n}a-13B), producing a total of 1,200 texts in English and 1,200 in Dutch. The human-written news samples come from well-known media outlets; the Dutch social media posts primarily discuss policy or health topics, whereas the English ones often revolve around social or sports events. Reviews typically cover literature in Dutch and various consumer goods in English. 
 
-
-Although CLIN33 offers balanced classes across two languages and three genres, its size remains relatively small for training large-scale models. To address this limitation and diversify the textual patterns, we created an augmented version of the dataset. We started with the original texts and applied a series of transformations to each sample. These transformations included synonym substitution, random word swaps, random insertions, targeted deletions, variations in spelling, and back-translation\footnote{Translating from English to Dutch and then back to English}. Each text thus produced several new variants that preserved the key semantics but introduced new surface forms. We ultimately obtained 9{,}720 total samples for training, split evenly between human and AI-generated content (4{,}860 each) and distributed equally across the three domains and the two languages. The final augmented corpus enables more robust feature learning.
-
 \begin{wraptable}{l}{0.65\textwidth}   
   \vspace{-1em}
   \centering
@@ -312,6 +309,9 @@ Although CLIN33 offers balanced classes across two languages and three genres, i
 \end{wraptable}
 
 
+Although CLIN33 offers balanced classes across two languages and three genres, its size remains relatively small for training large-scale models. To address this limitation and diversify the textual patterns, we created an augmented version of the dataset. We started with the original texts and applied a series of transformations to each sample. These transformations included synonym substitution, random word swaps, random insertions, targeted deletions, variations in spelling, and back-translation\footnote{Translating from English to Dutch and then back to English}. Each text thus produced several new variants that preserved the key semantics but introduced new surface forms. We ultimately obtained 9{,}720 total samples for training, split evenly between human and AI-generated content (4{,}860 each) and distributed equally across the three domains and the two languages. The final augmented corpus enables more robust feature learning.
+
+
 As an additional resource for pre-training and fine-tuning, we employed a subset of the AuTexTification dataset\footnote{\url{https://sites.google.com/view/autextification}}, introduced by~\citet{sarvazyan2023overview}. While the complete dataset includes English and Spanish texts in five distinct domains, we selectively used the \emph{English-only} portion from tweets, legal, and wiki categories. This subset contains 33{,}845 texts designated for binary AI-detection (Task 1), split nearly evenly between human-written (50.36\%) and AI-generated (49.64\%) documents. The human content is drawn from sources such as MultiEURLEX, XSUM, Amazon Reviews, TSATC, and WikiLingua, while the AI-generated portion is produced by BLOOM (1B7, 3B, 7B1) and GPT-3 (babbage, curie, text-davinci-003). Because of its class balance and domain variety, this subset of AuTexTification serves as a valuable source of pre-training examples for our ensemble.
 Table~\ref{tab:combined_data_overview} summarizes the essential attributes of the two datasets used to train and evaluate our methodology. The combined setup draws from the 33{,}845 samples in AuTexTification (English only) and the 9{,}720 augmented CLIN33 samples (both English and Dutch). We use AuTexTification Dataset for initial pre-training, 90\% of the CLIN data for the Augmenting and training and 10\% of unchanged CLIN data for evaluating.
 
@@ -323,7 +323,7 @@ We used an approach that integrates several models for text classification to ad
 
 
 \begin{wrapfigure}{r}{0.48\textwidth}
-  \vspace{-1em}
+  \vspace{-3em}
   \centering
   \begin{minipage}{\linewidth}
   \begin{algorithm}[H]
