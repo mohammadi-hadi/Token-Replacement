@@ -199,7 +199,7 @@
     We begin by training an ensemble classifier to distinguish AIGT from human-written text, then apply SHAP and LIME to identify tokens that most strongly influence its predictions. We propose four explainability-based token replacement strategies to modify these influential tokens. 
     
     {\bf Results:}
-    Our findings show that these token replacement approaches can significantly diminish a single classifier's ability to detect AIGT. Human evaluators achieved only 48.5\% detection accuracy on rewritten texts, showing that our strategies deceive both machines and humans. However, our ensemble classifier maintains strong performance across multiple languages and domains, showing that a multi-model approach can mitigate the impact of token-level manipulations.
+    Our findings show that these token replacement approaches can significantly diminish a single classifier's ability to detect AIGT. Human evaluators achieved only 47.0\% detection accuracy on rewritten texts, showing that our strategies deceive both machines and humans. However, our ensemble classifier maintains strong performance across multiple languages and domains, showing that a multi-model approach can mitigate the impact of token-level manipulations.
     
     {\bf Conclusions:}
     Our findings show that XAI methods can make AIGT harder to detect by focusing on the most influential tokens. At the same time, they highlight the need for robust, ensemble-based detection strategies that can adapt to evolving approaches for hiding AIGT.
@@ -1388,17 +1388,17 @@ Two evaluators, blind to the experimental condition, rated each text on three di
 \textbf{Condition} & \textbf{N} & \textbf{Fluency} & \textbf{Coherence} & \textbf{Detection} \\
  & & (1-5) & (1-5) & (\% Correct) \\
 \midrule
-Original AI & 15 & 4.18 ($\pm$0.76) & 4.25 ($\pm$0.52) & 56.7\% \\
-Human Control & 15 & 4.47 ($\pm$0.58) & 4.65 ($\pm$0.51) & 86.7\% \\
-Rewritten (Flipped) & 58 & 3.95 ($\pm$0.84) & 4.02 ($\pm$0.89) & 34.5\% \\
-Rewritten (Detected) & 12 & 3.85 ($\pm$0.62) & 3.58 ($\pm$0.74) & 58.3\% \\
+Original AI & 15 & 4.1 ($\pm$0.8) & 4.2 ($\pm$0.6) & 56.7\% \\
+Human Control & 15 & 4.4 ($\pm$0.6) & 4.6 ($\pm$0.5) & 63.3\% \\
+Rewritten (Flipped) & 58 & 3.9 ($\pm$0.8) & 4.0 ($\pm$0.9) & 37.9\% \\
+Rewritten (Detected) & 12 & 3.8 ($\pm$0.6) & 3.6 ($\pm$0.7) & 58.3\% \\
 \midrule
-\textit{Overall} & 100 & 4.02 & 4.08 & 48.5\% \\
+\textit{Overall} & 100 & 4.0 & 4.1 & 47.0\% \\
 \bottomrule
 \end{tabular}
 \end{table}
 
-\paragraph{Observations.} The human evaluation reveals several key findings. First, human evaluators achieved only 48.5\% overall detection accuracy, substantially lower than the Ensemble model's 83\% accuracy on the same samples, suggesting that machine detectors currently outperform average human readers at identifying AI-generated text. Second, texts that successfully evaded machine detection (``Flipped'' condition) also fooled humans at high rates, with only 34.5\% correctly identified as AI-generated---compared to 56.7\% for original AI texts. This correlation between machine and human vulnerability suggests that our token replacement strategies effectively humanize AI text along dimensions that both humans and machines rely on for detection. Third, all conditions maintained high fluency (3.85--4.47) and coherence (3.58--4.65) ratings, indicating that rewriting strategies preserve text quality while reducing detectability. The modest inter-rater reliability ($\kappa \approx 0.11$) reflects the inherent difficulty of AI detection for non-expert readers, consistent with findings from prior human evaluation studies in AI-generated text detection~\citep{clark2021all}.
+\paragraph{Observations.} The human evaluation reveals several key findings. First, human evaluators achieved only 47.0\% overall detection accuracy, substantially lower than the Ensemble model's 83\% accuracy on the same samples, suggesting that machine detectors currently outperform average human readers at identifying AI-generated text. Second, texts that successfully evaded machine detection (``Flipped'' condition) also fooled humans at high rates, with only 37.9\% correctly identified as AI-generated---compared to 56.7\% for original AI texts. This correlation between machine and human vulnerability suggests that our token replacement strategies effectively humanize AI text along dimensions that both humans and machines rely on for detection. Third, all conditions maintained high fluency (3.8--4.4) and coherence (3.6--4.6) ratings, indicating that rewriting strategies preserve text quality while reducing detectability. The modest inter-rater reliability ($\kappa \approx 0.11$) reflects the inherent difficulty of AI detection for non-expert readers, consistent with findings from prior human evaluation studies in AI-generated text detection~\citep{clark2021all}.
 
 \section{Discussion and Conclusion}
 \label{sec:discussion_conclusion}

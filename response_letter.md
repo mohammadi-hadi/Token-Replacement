@@ -36,9 +36,9 @@ We now discuss how our approach relates to these works and clarify our contribut
 
 We conducted a human evaluation study with 100 text samples and 2 evaluators. Key findings:
 
-- Human evaluators achieved only 48.5% detection accuracy overall
-- Rewritten texts that evaded machine detection also fooled humans (only 34.5% correctly identified)
-- All conditions maintained high fluency (3.85–4.47) and coherence (3.58–4.65) ratings
+- Human evaluators achieved only 47.0% detection accuracy overall
+- Rewritten texts that evaded machine detection also fooled humans (only 37.9% correctly identified)
+- All conditions maintained high fluency (3.8–4.4) and coherence (3.6–4.6) ratings
 - We report inter-rater reliability using Cohen's kappa
 
 This finding is now also mentioned in the Abstract.
@@ -127,7 +127,7 @@ We acknowledge this as future work in the Limitations section.
 2. **New Section: Sensitivity Analysis** – Trade-off analysis between fidelity and evasion
 3. **New Section: Human Evaluation** – 100 samples, 2 evaluators, fluency/coherence/detection ratings
 4. **Expanded Related Work** – Added AuthorMist, SyntaxShap, Moraliyage references
-5. **Updated Abstract** – Now mentions human evaluation results (48.5% accuracy)
+5. **Updated Abstract** – Now mentions human evaluation results (47.0% accuracy)
 6. **Expanded Limitations** – Addresses dataset size, computational cost, generalization concerns
 7. **Clarified Contributions** – Stronger positioning of novel aspects
 
