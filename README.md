@@ -10,7 +10,7 @@ We investigate how explanation techniques can guide systematic token replacement
 
 - **Token replacement strategies** (HSR, PSR, GPT, GPT+Genre) can reduce detection accuracy of individual models by 15-40%
 - **Our ensemble detector** maintains 83% accuracy even against adversarial rewrites
-- **Human evaluators** achieve only 47.5% detection accuracy on rewritten texts, showing humans are similarly vulnerable
+- **Human evaluators** achieve only 48.5% detection accuracy on rewritten texts, showing humans are similarly vulnerable
 
 ## Repository Structure
 
