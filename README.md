@@ -15,28 +15,43 @@ We investigate how explanation techniques can guide systematic token replacement
 ## Repository Structure
 
 ```
-├── paper/              # LaTeX source and figures
-│   ├── main.tex        # Paper source
-│   ├── plots/          # Figures and visualizations
-│   └── *.cls, *.bib    # LaTeX dependencies
+├── Project03_JAIR_Revised/   # LaTeX source and figures
+│   ├── main.tex              # Paper source
+│   ├── main.bbl              # Compiled bibliography
+│   ├── 01-sample-base.bib    # Bibliography database
+│   ├── plots/                # Figures and visualizations
+│   └── *.cls, *.bst          # LaTeX dependencies
 │
-├── code/               # Analysis scripts
+├── code/                     # Analysis scripts
 │   ├── human_eval_sample_selector.py
 │   └── simple_analysis.py
 │
-├── data/               # Datasets
+├── data/                     # Datasets
 │   ├── human_eval_samples.csv
+│   ├── human_eval_texts_only.csv
 │   └── strategy_results/
 │
-├── results/            # Experimental results
-│   ├── figures/        # Result visualizations
-│   └── tables/         # Summary statistics
+├── results/                  # Experimental results
+│   ├── figures/              # Result visualizations
+│   └── tables/               # Summary statistics
 │
-├── evaluation/         # Human evaluation materials
+├── evaluation/               # Human evaluation materials
 │   ├── human_eval_form.html
 │   └── human_eval_results.json
 │
-└── pdf/                # Compiled paper
+├── Project03_JAIR_Revised_FINAL.pdf  # Compiled paper
+├── response_letter.md        # Response to reviewers
+└── overleaf.zip              # Overleaf project backup
+```
+
+## Building the Paper
+
+```bash
+cd Project03_JAIR_Revised
+pdflatex main.tex
+bibtex main
+pdflatex main.tex
+pdflatex main.tex
 ```
 
 ## Installation
