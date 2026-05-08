@@ -1,0 +1,58 @@
+cff-version: 1.2.0
+message: "If you use this code or data, please cite both the paper and this software archive."
+title: "Explainability-Based Token Replacement on LLM-Generated Text"
+type: software
+version: "v1.0-thesis"
+date-released: "2026-05-08"
+doi: "10.5281/zenodo.20090478"
+license: MIT
+repository-code: "https://github.com/mohammadi-hadi/Token-Replacement"
+authors:
+  - given-names: "Hadi"
+    family-names: "Mohammadi"
+    affiliation: "Utrecht University"
+  - given-names: "Anastasia"
+    family-names: "Giachanou"
+    affiliation: "Utrecht University"
+  - given-names: "Daniel L."
+    family-names: "Oberski"
+    affiliation: "Utrecht University"
+  - given-names: "Robert A."
+    family-names: "Bagheri"
+    affiliation: "Utrecht University"
+keywords:
+  - "explainable AI"
+  - "AI-generated text detection"
+  - "robustness"
+  - "SHAP"
+  - "LIME"
+  - "adversarial examples"
+  - "BERT"
+abstract: >-
+  Detectors of AI-generated text often rely on surface-level token
+  patterns that can be circumvented by small, targeted edits. This work
+  uses explainability methods (SHAP, LIME) to identify the tokens most
+  influential in detector decisions, then systematically replaces them to
+  probe both adversarial weaknesses and pathways to greater robustness.
+  Experiments on the CLIN33 corpus and AuTexTification data show that
+  explainability-guided token replacement reveals concrete brittleness in
+  current detectors and points to defensive training strategies.
+preferred-citation:
+  type: article
+  title: "Explainability-Based Token Replacement on LLM-Generated Text"
+  year: 2025
+  journal: "arXiv preprint"
+  url: "https://arxiv.org/abs/2506.04050"
+  authors:
+    - given-names: "Hadi"
+      family-names: "Mohammadi"
+      affiliation: "Utrecht University"
+    - given-names: "Anastasia"
+      family-names: "Giachanou"
+      affiliation: "Utrecht University"
+    - given-names: "Daniel L."
+      family-names: "Oberski"
+      affiliation: "Utrecht University"
+    - given-names: "Robert A."
+      family-names: "Bagheri"
+      affiliation: "Utrecht University"

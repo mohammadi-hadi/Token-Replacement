@@ -1,0 +1,14 @@
+AI_index,ModelsFlipped
+24,XGBoost
+29,XGBoost
+55,Ensemble
+111,"BERT-base,DistilBERT"
+113,XGBoost
+118,"XGBoost,BERT-base"
+150,Ensemble
+171,"XGBoost,BERT-base,Ensemble"
+188,XGBoost
+193,XGBoost
+207,DistilBERT
+213,"BERT-base,DistilBERT"
+233,DistilBERT
