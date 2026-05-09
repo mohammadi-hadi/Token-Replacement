@@ -1,0 +1,25 @@
+{
+  "title": "Explainability-Based Token Replacement on LLM-Generated Text",
+  "description": "Code, contestant models, and analysis for the explainability-based token-replacement experiments on AI-generated-text detectors. SHAP and LIME identify the tokens most influential to detector decisions; those tokens are then systematically replaced on the CLIN33 and AuTexTification corpora to expose adversarial weaknesses and pathways to greater robustness. Archived snapshot for the v1.0-thesis release accompanying the doctoral thesis Let Me Explain! Explainable NLP for Understanding Large Language Models (Utrecht University, 2026).",
+  "creators": [
+    {"name": "Mohammadi, Hadi", "orcid": "0000-0003-0860-9200", "affiliation": "Utrecht University"},
+    {"name": "Giachanou, Anastasia", "affiliation": "Utrecht University"},
+    {"name": "Oberski, Daniel L.", "affiliation": "Utrecht University"},
+    {"name": "Bagheri, Robert A.", "affiliation": "Utrecht University"}
+  ],
+  "license": "mit",
+  "upload_type": "software",
+  "version": "v1.0-thesis",
+  "keywords": [
+    "explainable AI",
+    "AI-generated text detection",
+    "robustness",
+    "SHAP",
+    "LIME",
+    "adversarial examples",
+    "BERT"
+  ],
+  "related_identifiers": [
+    {"identifier": "https://arxiv.org/abs/2506.04050", "relation": "isSupplementTo", "scheme": "url"}
+  ]
+}

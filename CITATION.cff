@@ -3,8 +3,7 @@ message: "If you use this code or data, please cite both the paper and this soft
 title: "Explainability-Based Token Replacement on LLM-Generated Text"
 type: software
 version: "v1.0-thesis"
-date-released: "2026-05-08"
-doi: "10.5281/zenodo.20090478"
+date-released: "2026-05-09"
 license: MIT
 repository-code: "https://github.com/mohammadi-hadi/Token-Replacement"
 authors:
