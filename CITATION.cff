@@ -4,6 +4,10 @@ title: "Explainability-Based Token Replacement on LLM-Generated Text"
 type: software
 version: "v1.0-thesis"
 date-released: "2026-05-09"
+identifiers:
+  - type: doi
+    value: 10.5281/zenodo.20091839
+    description: Zenodo archive of the v1.0-thesis snapshot
 license: MIT
 repository-code: "https://github.com/mohammadi-hadi/Token-Replacement"
 authors:
