@@ -69,25 +69,58 @@ Token-Replacement/
 ├── CITATION.cff
 ├── CONTRIBUTING.md
 ├── requirements.txt
+├── paper.pdf                                          # arXiv preprint
+├── notebooks/
+│   ├── Enhancing_AI_Generated_Text_Undetectability.ipynb  # Main analysis (HSR/PSR/GPT/GPT+Genre)
+│   ├── CLIN33_Shared_Task_V6.ipynb                    # CLIN33 shared-task entry pipeline
+│   ├── contestant_model_v1.ipynb                      # Submitted contestant model V1
+│   ├── CLIN_Example.ipynb                             # CLIN baseline example
+│   └── Example_full.ipynb                             # Extended example with full pipeline
 ├── code/
-│   └── human_eval_sample_selector.py     # Stratified sampling for human-evaluation set
+│   ├── human_eval_sample_selector.py                  # Stratified sampling for human-eval set
+│   └── contestant_models/                             # CLIN33 contestant model variants (1–7)
+│       ├── contestant_model.py                        # Submitted base model
+│       ├── contestant_model_v1.py                     # Submission V1
+│       ├── contestant_model_{1..6}.py                 # Iterative variants explored
+│       ├── contestant_model_{7,corrected_7,modified_7}.py  # V7 family
+│       ├── contestant_model_2_modified.py             # V2 modified
+│       ├── contestant_model_3_1.py                    # V3.1
+│       └── integrated_contestant_model_3.py           # Integrated V3
+├── models/
+│   ├── xgboost_model.pkl                              # Trained XGBoost classifier
+│   ├── tfidf_vectorizer.pkl                           # Fitted TF-IDF vectorizer
+│   └── bert_finetuned/                                # BERT tokenizer + training metadata
+│       ├── config.json
+│       ├── tokenizer.{json,_config.json}
+│       ├── special_tokens_map.json
+│       ├── vocab.txt
+│       ├── trainer_state.json
+│       └── training_args.bin
 ├── data/
-│   ├── human_eval_samples.csv            # Selected texts for human evaluation
-│   ├── human_eval_texts_only.csv         # Same texts, single-column form
-│   ├── most_effective_tokens.csv         # Per-token mean |SHAP| values
-│   └── strategy_results/                 # Per-sample rewrites for the four strategies
-│       ├── strategy{1..4}_results.csv          # BERT-based detector
-│       └── strategy{1..4}_results_xgb.csv      # XGBoost detector
+│   ├── human_eval_samples.csv                         # Selected texts for human evaluation
+│   ├── human_eval_texts_only.csv                      # Same texts, single-column form
+│   ├── most_effective_tokens.csv                      # Per-token mean |SHAP| values
+│   ├── big_comparison_table.csv                       # Cross-model comparison table
+│   ├── big_experiment_results.csv                     # Aggregate experiment metrics
+│   ├── clin33_dev/                                    # CLIN33 dev splits (en/nl × news/reviews/twitter)
+│   │   └── dev_{en,nl}_{news,reviews,twitter}.csv
+│   └── strategy_results/                              # Per-sample rewrites for the four strategies
+│       ├── strategy{1..4}_results.csv                 # BERT-based detector
+│       └── strategy{1..4}_results_xgb.csv             # XGBoost detector
 ├── evaluation/
-│   └── human_eval_form.html              # Annotation form (web)
+│   └── human_eval_form.html                           # Annotation form (web)
 └── results/
-    ├── model_comparison_by_lang_domain.csv     # Detector accuracy by (model, language, domain)
-    ├── overlap_SHAP_{HSR,PSR,GPT,GPT+Genre}.csv   # Sample-level flip overlap (SHAP-driven)
-    ├── overlap_Random_{HSR,PSR,GPT,GPT+Genre}.csv # Same, random-token baseline
-    ├── figures/                                # Generated plots
+    ├── model_comparison_by_lang_domain.csv            # Detector accuracy by (model, language, domain)
+    ├── overlap_SHAP_{HSR,PSR,GPT,GPT+Genre}.csv       # Sample-level flip overlap (SHAP-driven)
+    ├── overlap_Random_{HSR,PSR,GPT,GPT+Genre}.csv     # Same, random-token baseline
+    ├── figures/                                       # Generated plots
     └── tables/
         └── model_comparison_by_lang_domain.csv
 ```
+
+> **Note on data:** CLIN33 / AuTexTification dev splits and per-sample rewrite results are included for reproducibility of the main notebook. Original CLIN33 source data is © the shared-task organisers; please cite the shared-task papers and respect their terms when redistributing or reusing.
+
+> **Note on secrets:** API keys in the notebooks are placeholders (`hf_REDACTED_SET_VIA_ENV_VAR`, `sk-proj-REDACTED_SET_VIA_ENV_VAR`). Set your own via `os.environ["HF_TOKEN"]` / `os.environ["OPENAI_API_KEY"]` before running.
 
 ## Token Replacement Strategies
 
