@@ -2,7 +2,7 @@
 
 # Token-Level Robustness in AI-Generated Text Detection
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20090478.svg)](https://doi.org/10.5281/zenodo.20090478)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20091838.svg)](https://doi.org/10.5281/zenodo.20091838)
 [![arXiv](https://img.shields.io/badge/arXiv-2506.04050-b31b1b.svg)](https://arxiv.org/abs/2506.04050)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
@@ -19,7 +19,7 @@
 | **Affiliation**  | Utrecht University, The Netherlands |
 | **Venue**        | arXiv preprint |
 | **arXiv**        | [2506.04050](https://arxiv.org/abs/2506.04050) |
-| **Code archive** | [10.5281/zenodo.20090478](https://doi.org/10.5281/zenodo.20090478) (this repository, snapshot v1.0-thesis) |
+| **Code archive** | [10.5281/zenodo.20091838](https://doi.org/10.5281/zenodo.20091838) (this repository, snapshot v1.0-thesis) |
 
 > This repository accompanies **Chapter 4** of the PhD thesis
 > *Let Me Explain! Explainable NLP for Understanding Large Language Models* (Hadi Mohammadi, Utrecht University, 2026).
@@ -49,8 +49,8 @@ If you use this code or data, please cite **both** the paper and this code archi
   year      = {2026},
   publisher = {Zenodo},
   version   = {v1.0-thesis},
-  doi       = {10.5281/zenodo.20090478},
-  url       = {https://doi.org/10.5281/zenodo.20090478}
+  doi       = {10.5281/zenodo.20091838},
+  url       = {https://doi.org/10.5281/zenodo.20091838}
 }
 ```
 
