@@ -118,7 +118,7 @@ Token-Replacement/
 
 > **Note on data:** CLIN33 / AuTexTification dev splits and per-sample rewrite results are included for reproducibility of the main notebook. Original CLIN33 source data is © the shared-task organisers; please cite the shared-task papers and respect their terms when redistributing or reusing.
 
-> **Note on secrets:** API keys in the notebooks are placeholders (`hf_REDACTED_SET_VIA_ENV_VAR`, `sk-proj-REDACTED_SET_VIA_ENV_VAR`). Set your own via `os.environ["HF_TOKEN"]` / `os.environ["OPENAI_API_KEY"]` before running.
+> **Note on secrets:** API keys in the notebooks are redacted (`hf_REDACTED_SET_VIA_ENV_VAR`, `sk-proj-REDACTED_SET_VIA_ENV_VAR`). Set your own via `os.environ["HF_TOKEN"]` / `os.environ["OPENAI_API_KEY"]` before running.
 
 ## Token Replacement Strategies
 
