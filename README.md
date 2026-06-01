@@ -100,7 +100,6 @@ Token-Replacement/
 │   ├── human_eval_samples.csv                         # Selected texts for human evaluation
 │   ├── human_eval_texts_only.csv                      # Same texts, single-column form
 │   ├── most_effective_tokens.csv                      # Per-token mean |SHAP| values
-│   ├── big_comparison_table.csv                       # Cross-model comparison table
 │   ├── big_experiment_results.csv                     # Aggregate experiment metrics
 │   ├── clin33_dev/                                    # CLIN33 dev splits (en/nl × news/reviews/twitter)
 │   │   └── dev_{en,nl}_{news,reviews,twitter}.csv
