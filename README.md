@@ -69,7 +69,6 @@ Token-Replacement/
 ├── CITATION.cff
 ├── CONTRIBUTING.md
 ├── requirements.txt
-├── paper.pdf                                          # arXiv preprint
 ├── notebooks/
 │   ├── Enhancing_AI_Generated_Text_Undetectability.ipynb  # Main analysis (HSR/PSR/GPT/GPT+Genre)
 │   ├── CLIN33_Shared_Task_V6.ipynb                    # CLIN33 shared-task entry pipeline
