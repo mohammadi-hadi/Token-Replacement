@@ -58,7 +58,44 @@ If you use this code or data, please cite **both** the paper and this code archi
 
 ## Overview
 
-We investigate how SHAP-based explanations can guide systematic token replacements that probe AI-text detector robustness, and we evaluate an ensemble detector designed to remain resilient against such replacements.
+We investigate how SHAP-based explanations can guide systematic token replacements that probe AI-text detector robustness, and we evaluate an ensemble detector designed to remain resilient against such replacements. The repository contains the analysis notebooks, the CLIN33 shared-task contestant models, trained detector artefacts (XGBoost, TF-IDF, BERT metadata), and per-strategy replacement results.
+
+## Methods
+
+### Token Replacement Strategies
+
+| Strategy | Description |
+|----------|-------------|
+| **HSR** | Human Similar Replacement — Word2Vec synonyms from human text |
+| **PSR** | Part-of-Speech Replacement — HSR with POS tag matching |
+| **GPT** | GPT-4o-mini prompted replacements |
+| **GPT+Genre** | GPT with domain context (news, reviews, tweets) |
+
+### Explainability
+
+SHAP (Shapley Additive exPlanations) is used to compute global token importance, with a Random baseline for comparison.
+
+## Results
+
+Per-strategy rewrites, detector comparisons, and sample-level flip-overlap tables (SHAP-driven vs. random baseline) are in [`results/`](results/) and [`data/strategy_results/`](data/strategy_results/).
+
+<div align="center">
+<img src="results/figures/overlap_stacked_bar_all_scenarios.png" alt="Sample-level flip overlap across replacement scenarios" width="700"/>
+<br><i>Sample-level flip overlap across all replacement scenarios (SHAP-driven vs. random baseline)</i>
+</div>
+
+## Quick Start
+
+```bash
+git clone https://github.com/mohammadi-hadi/Token-Replacement.git
+cd Token-Replacement
+pip install -r requirements.txt
+
+# Main analysis (HSR / PSR / GPT / GPT+Genre)
+jupyter notebook notebooks/Enhancing_AI_Generated_Text_Undetectability.ipynb
+```
+
+> **Note on secrets:** API keys in the notebooks are redacted (`hf_REDACTED_SET_VIA_ENV_VAR`, `sk-proj-REDACTED_SET_VIA_ENV_VAR`). Set your own via `os.environ["HF_TOKEN"]` / `os.environ["OPENAI_API_KEY"]` before running.
 
 ## Repository Structure
 
@@ -81,7 +118,9 @@ Token-Replacement/
 │       ├── contestant_model.py                        # Submitted base model
 │       ├── contestant_model_v1.py                     # Submission V1
 │       ├── contestant_model_{1..6}.py                 # Iterative variants explored
-│       ├── contestant_model_{7,corrected_7,modified_7}.py  # V7 family
+│       ├── contestant_model_7.py                      # V7
+│       ├── corrected_contestant_model_7.py            # V7, corrected
+│       ├── modified_contestant_model_7.py             # V7, modified
 │       ├── contestant_model_2_modified.py             # V2 modified
 │       ├── contestant_model_3_1.py                    # V3.1
 │       └── integrated_contestant_model_3.py           # Integrated V3
@@ -90,7 +129,8 @@ Token-Replacement/
 │   ├── tfidf_vectorizer.pkl                           # Fitted TF-IDF vectorizer
 │   └── bert_finetuned/                                # BERT tokenizer + training metadata
 │       ├── config.json
-│       ├── tokenizer.{json,_config.json}
+│       ├── tokenizer.json
+│       ├── tokenizer_config.json
 │       ├── special_tokens_map.json
 │       ├── vocab.txt
 │       ├── trainer_state.json
@@ -111,35 +151,21 @@ Token-Replacement/
     ├── model_comparison_by_lang_domain.csv            # Detector accuracy by (model, language, domain)
     ├── overlap_SHAP_{HSR,PSR,GPT,GPT+Genre}.csv       # Sample-level flip overlap (SHAP-driven)
     ├── overlap_Random_{HSR,PSR,GPT,GPT+Genre}.csv     # Same, random-token baseline
-    ├── figures/                                       # Generated plots
+    ├── figures/
+    │   └── overlap_stacked_bar_all_scenarios.png      # Overlap stacked-bar plot (all scenarios)
     └── tables/
         └── model_comparison_by_lang_domain.csv
 ```
 
-> **Note on data:** CLIN33 / AuTexTification dev splits and per-sample rewrite results are included for reproducibility of the main notebook. Original CLIN33 source data is © the shared-task organisers; please cite the shared-task papers and respect their terms when redistributing or reusing.
+## Data
 
-> **Note on secrets:** API keys in the notebooks are redacted (`hf_REDACTED_SET_VIA_ENV_VAR`, `sk-proj-REDACTED_SET_VIA_ENV_VAR`). Set your own via `os.environ["HF_TOKEN"]` / `os.environ["OPENAI_API_KEY"]` before running.
+CLIN33 / AuTexTification dev splits and per-sample rewrite results are included for reproducibility of the main notebook. Original CLIN33 source data is © the shared-task organisers; please cite the shared-task papers and respect their terms when redistributing or reusing.
 
-## Token Replacement Strategies
+## Related Work
 
-| Strategy | Description |
-|----------|-------------|
-| **HSR** | Human Similar Replacement — Word2Vec synonyms from human text |
-| **PSR** | Part-of-Speech Replacement — HSR with POS tag matching |
-| **GPT** | GPT-4o-mini prompted replacements |
-| **GPT+Genre** | GPT with domain context (news, reviews, tweets) |
-
-## Explainability Method
-
-SHAP (Shapley Additive exPlanations) is used to compute global token importance, with a Random baseline for comparison.
-
-## Installation
-
-```bash
-git clone https://github.com/mohammadi-hadi/Token-Replacement.git
-cd Token-Replacement
-pip install -r requirements.txt
-```
+- [xnlp-survey](https://github.com/mohammadi-hadi/xnlp-survey) — survey of explainable NLP across domains, grounding the same thesis
+- [Explainable_Annotations_Reliability](https://github.com/mohammadi-hadi/Explainable_Annotations_Reliability) — SHAP explanations for assessing LLM annotation reliability
+- [Automatic-Detection-of-AI-Generated-Texts](https://github.com/mohammadi-hadi/Automatic-Detection-of-AI-Generated-Texts) — companion work on detecting AI-generated text
 
 ## License
 
