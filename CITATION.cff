@@ -12,6 +12,7 @@ license: MIT
 repository-code: "https://github.com/mohammadi-hadi/Token-Replacement"
 authors:
   - given-names: "Hadi"
+    orcid: "https://orcid.org/0000-0003-0860-9200"
     family-names: "Mohammadi"
     affiliation: "Utrecht University"
   - given-names: "Anastasia"
@@ -20,7 +21,7 @@ authors:
   - given-names: "Daniel L."
     family-names: "Oberski"
     affiliation: "Utrecht University"
-  - given-names: "Robert A."
+  - given-names: "Ayoub"
     family-names: "Bagheri"
     affiliation: "Utrecht University"
 keywords:
@@ -48,6 +49,7 @@ preferred-citation:
   url: "https://arxiv.org/abs/2506.04050"
   authors:
     - given-names: "Hadi"
+      orcid: "https://orcid.org/0000-0003-0860-9200"
       family-names: "Mohammadi"
       affiliation: "Utrecht University"
     - given-names: "Anastasia"
@@ -56,6 +58,6 @@ preferred-citation:
     - given-names: "Daniel L."
       family-names: "Oberski"
       affiliation: "Utrecht University"
-    - given-names: "Robert A."
+    - given-names: "Ayoub"
       family-names: "Bagheri"
       affiliation: "Utrecht University"
