@@ -45,7 +45,7 @@ If you use this code or data, please cite **both** the paper and this code archi
 
 @software{mohammadi_token_replacement_2026,
   author    = {Mohammadi, Hadi and Giachanou, Anastasia and Oberski, Daniel L. and Bagheri, Robert A.},
-  title     = {Token-Level Robustness in AI-Generated Text Detection},
+  title     = {Explainability-Based Token Replacement on LLM-Generated Text},
   year      = {2026},
   publisher = {Zenodo},
   version   = {v1.0-thesis},
