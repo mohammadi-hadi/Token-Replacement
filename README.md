@@ -161,6 +161,8 @@ Token-Replacement/
 
 CLIN33 / AuTexTification dev splits and per-sample rewrite results are included for reproducibility of the main notebook. Original CLIN33 source data is © the shared-task organisers; please cite the shared-task papers and respect their terms when redistributing or reusing.
 
+User handles in the English Twitter split (and in the human-evaluation samples drawn from it) were replaced with `@ANONYMOUS` after the experiments ran, as the organisers already did in the Dutch split, so the reported numbers were computed on the original text.
+
 ## Related Work
 
 - [xnlp-survey](https://github.com/mohammadi-hadi/xnlp-survey) — survey of explainable NLP across domains, grounding the same thesis
